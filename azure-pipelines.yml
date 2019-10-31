@@ -68,18 +68,3 @@ jobs:
         inputs:
           artifactName: 'A1.1'
           downloadPath: '$(System.ArtifactStagingDirectory)'
-
- - deployment: deploymentJob4
-   environment: envionment4
-   dependsOn: J2
-   pool: Default
-   strategy:
-    runOnce:
-      deploy:
-       steps:
-        - task: DownloadBuildArtifacts@0
-          inputs:
-            # downloadType: specific
-            # itemPattern: '**'
-            artifactName: 'A2'
-            downloadPath: '$(System.ArtifactStagingDirectory)'
